@@ -1,14 +1,14 @@
 # vault-PKI-k8s-demo
-#!/usr/bin/env bash
-#Install and start minikube:
+
+#Install and start minikube:  
 https://github.com/kubernetes/minikube#installation
-#Install helm:
+#Install helm:  
 https://github.com/kubernetes/helm#install
-#Install nginx ingress:
+#Install nginx ingress:  
 ```
 helm install --name nginx-ingress stable/nginx-ingress --set controller.service.type="NodePort" --set controller.service.nodePorts.https="32443" --set controller.service.nodePorts.http="32080"
 ```
-#Install consul:
+#Install consul:  
 ```
 helm install --name consul stable/consul --set antiAffinity=soft
 ```
