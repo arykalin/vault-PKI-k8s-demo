@@ -62,12 +62,13 @@ openssl s_client -servername pkidemo.default.example.com -connect $(minikube ip)
 #Recreate certificate and check again:
 ```
 kubectl delete job vault-secret-pki
-kubectl apply -f ../pki-demo.yaml
+kubectl apply -f pki-demo.yaml
 ```
 
 #Cleanup:
 ```
 helm delete --purge consul vault nginx-ingress
 kubectl delete -f pki-demo.yaml
+kubectl delete secret pkidemo.default.example.com
 kubectl delete pvc $(kubectl get pvc -l "component=consul-consul" -o jsonpath="{.items[*].metadata.name}")
 ```
