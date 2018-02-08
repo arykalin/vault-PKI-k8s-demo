@@ -1,9 +1,9 @@
 # vault-PKI-k8s-demo
 
 #Install and start minikube:  
-https://github.com/kubernetes/minikube#installation
+https://github.com/kubernetes/minikube#installation  
 #Install helm:  
-https://github.com/kubernetes/helm#install
+https://github.com/kubernetes/helm#install  
 #Install nginx ingress:  
 ```
 helm install --name nginx-ingress stable/nginx-ingress --set controller.service.type="NodePort" --set controller.service.nodePorts.https="32443" --set controller.service.nodePorts.http="32080"
